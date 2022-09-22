@@ -4,10 +4,15 @@ const Category_39 = ({ categories }) => {
   console.log("categories", categories);
   return (
     <div className="btn-container">
-      {categories.map((category) => {
+      {map((category, index) => {
         const { all, breakfast, lunch, shakes, dinner } = category;
         return (
-          <button type="button" className="filter-btn" data-id="all">
+          <button
+            key={index}
+            type="button"
+            className="filter-btn"
+            data-id="all"
+          >
             {category}
           </button>
         );
