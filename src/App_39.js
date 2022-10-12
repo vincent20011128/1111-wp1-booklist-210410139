@@ -34,6 +34,7 @@ const handleSumbit = (e) => {
     <>
     <section className="section-center">
       <form className="grocery-form" onSubmit={handleSumbit}>
+        {alert.show&& <Alert_39 {...alert} removeAlert={showAlert}/> }
         <h3>Grocery Bud - 210410139</h3>
         <div className="form-control">
           <input type='text' className="grocery" placeholder='e.g. eggs' value={name} onChange={
@@ -43,7 +44,12 @@ const handleSumbit = (e) => {
           <button type="submit" className="submit-btn">submit</button>
         </div>
       </form>
-      {}
+      { list.length  > 0 && (
+        <div className="grocery-container">
+          <List_39 items={list}/>
+          <button className="clear-btn">clear items</button>
+        </div>
+      ) }
       </section></>
   )
 }
