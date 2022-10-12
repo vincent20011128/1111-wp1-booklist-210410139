@@ -2,14 +2,27 @@ import React, { useState, useEffect } from 'react'
 import List_39 from './components/List_39'
 import Alert_39 from './components/Alert_39'
 
+const getLocalStorage = () => {
+  let list = localStorage.getItem('list');
+  if(list) {
+    return JSON.parse(localStorage.getItem('list'));
+  }else {
+    return [];
+  }
+};
+
 const App_39 = () => {
   const [name, setName] = useState('');
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(getLocalStorage);
   const [alert,setAlert] = useState({
     show: false,
     msg:'',
     type: ''
   });
+
+  useEffect(() => {
+    localStorage.setItem('list',JSON.stringify(list));
+  }, [list]);
 
   const showAlert = (show = false, msg = '', type = '') => {
     setAlert({show, msg, type });
