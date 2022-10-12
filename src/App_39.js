@@ -43,6 +43,16 @@ const handleSumbit = (e) => {
   }
 };
 
+const removeItem = (id) => {
+  showAlert(true,'item removed','danger');
+  setList(list.filter((item) => item.id !== id));
+};
+
+const clearList = () => {
+  showAlert(true,'empty list','danger');
+  setList([]);
+};
+
   return (
     <>
     <section className="section-center">
@@ -59,8 +69,8 @@ const handleSumbit = (e) => {
       </form>
       { list.length  > 0 && (
         <div className="grocery-container">
-          <List_39 items={list}/>
-          <button className="clear-btn">clear items</button>
+          <List_39 items={list} removeItem={removeItem}/>
+          <button className="clear-btn" onClick={clearList}>clear items</button>
         </div>
       ) }
       </section></>
