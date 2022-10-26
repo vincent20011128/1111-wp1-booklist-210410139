@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import data from './components/BlogData_xx';
 import BlogList_xx from './components/BlogList_xx';
+// import Alert_xx from './components/Alert_xx';
 
 const App_39 = () => {
   const [blogs, setBlogs] =  useState(data);
@@ -14,6 +15,15 @@ const App_39 = () => {
     setBlogs([]);
   }
 
+  const filterItem = (category) => {
+    if(category === 'all') {
+      setBlogs(data);
+    } else {
+      const newBlogs = data.filter((blog) =>blog.category === category);
+      setBlogs(newBlogs);
+    }
+  }
+
   return (
     <>
     <section className="blogs">
@@ -21,9 +31,9 @@ const App_39 = () => {
         <h2>CSS Grid using breakpoints</h2>
       </div>
       <div className="filter-container">
-        <button type="button" className="filter-btn">all</button>
-        <button type="button" className="filter-btn">lifestyle</button>
-        <button type="button" className="filter-btn">travel</button>
+        <button type="button" className="filter-btn" onClick={()=>filterItem('all')}>all</button>
+        <button type="button" className="filter-btn" onClick={()=>filterItem('lifestyle')}>lifestyle</button>
+        <button type="button" className="filter-btn" onClick={()=>filterItem('travel')}>travel</button>
       </div>   
       <div className="blogs-center">
         <BlogList_xx key={1} blogs={blogs} removeItem={removeItem}/>
