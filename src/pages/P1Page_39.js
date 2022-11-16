@@ -3,7 +3,7 @@ import React from 'react';
 const P1Page_39 = () => {
   return (
     <>
-   <section className="main-section">
+  <section className="main-section">
     <div className="filter-left">
       <div className="left-content">
         <form className="input-form">
