@@ -36,7 +36,8 @@ const P1Page_39 = () => {
         </div>
       </div>
     </div>
-  </section></>
+  </section>
+  </>
   );
 };
 export default P1Page_39;
