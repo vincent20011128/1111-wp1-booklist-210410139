@@ -1,38 +1,88 @@
 const midterm_data_39 = [
     {
-      id: 'recZkNf2kwmdBcqd0',
-      name: 'accent chair',
-      image:
-        'https://dl.airtable.com/.attachmentThumbnails/e8bc3791196535af65f40e36993b9e1f/438bd160',
+      id: 1,
+      img:"/images/product-1.jpg",
+      name:"high-back bench",
+      price:"$9.99",
+      category:'ikea',
     },
     {
-      id: 'recEHmzvupvT8ZONH',
-      name: 'albany sectional',
-  
-      image:
-        'https://dl.airtable.com/.attachmentThumbnails/0be1af59cf889899b5c9abb1e4db38a4/d631ac52',
+      id: 2,
+      img:"/images/product-2.jpg",
+      name:"albany table",
+      price:"79.99",
+      category:'marcos',
     },
     {
-      id: 'rec5NBwZ5zCD9nfF0',
-      name: 'albany table',
-  
-      image:
-        'https://dl.airtable.com/.attachmentThumbnails/7478483f40a2f56662a87b304bd4e104/707d397f',
+      id: 3,
+      img:"/images/product-3.jpg",
+      name:"accent chair",
+      price:"$25.99",
+      category:'caressa',
     },
     {
-      id: 'recd1jIVIEChmiwhe',
-      name: 'armchair',
-  
-      image:
-        'https://dl.airtable.com/.attachmentThumbnails/530c07c5ade5acd9934c8dd334458b86/cf91397f',
+      id: 4,
+      img:"/images/product-4.jpg",
+      name:"wooden table",
+      price:"$45.99",
+      category:'ikea',
     },
     {
-      id: 'recoM2MyHJGHLVi5l',
-      name: 'bar stool',
-      image:
-        'https://dl.airtable.com/.attachmentThumbnails/a6119fabf7256049cc0e8dbcdf536c9c/b0153f66',
+      id: 5,
+      img:"/images/product-5.jpg",
+      name:"dining table",
+      price:"$6.99",
+      category:'marcos',
+    },
+    {
+      id: 6,
+      img:"/images/product-6.jpg",
+      name:"sofa set",
+      price:"$69.99",
+      category:'caressa',
+    },
+    {
+      id: 7,
+      img:"/images/product-7.jpg",
+      name:"modern bookshelf",
+      price:"$8.99",
+      category:'ikea',
+    },
+    {
+      id: 8,
+      img:"/images/product-8.jpg",
+      name:"emperor bed",
+      price:"$21.99",
+      category:'marcos',
+    },
+    {
+      id: 9,
+      img:"/images/product-9.jpg",
+      name:"utopia sofa",
+      price:"$39.95",
+      category:'caressa',
+    },
+    {
+      id: 10,
+      img:"/images/product-10.jpg",
+      name:"entertainment center",
+      price:"$29.98",
+      category:'ikea',
+    },
+    {
+      id: 11,
+      img:"/images/product-11.jpg",
+      name:"albany sectional",
+      price:"$10.99",
+      category:'marcos',
+    },
+    {
+      id: 12,
+      img:"/images/product-12.jpg",
+      name:"leather sofa",
+      price:"$9.99",
+      category:'caressa',
     },
   ];
-  
   export default midterm_data_39;
   

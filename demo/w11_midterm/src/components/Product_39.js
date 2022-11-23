@@ -1,10 +1,17 @@
-const Product_39 = ({ img, title, author }) => {
+const Product_39 = ({ img, name, price }) => {
   return (
-    <article className='book'>
-      <img src={img} alt='' />
-      <h1>{title}</h1>
-      <h4>{author}</h4>
-    </article>
+    <>
+  <div className="single-product">
+    <img 
+    src={img} 
+    className="single-product-img img" 
+    alt="albany table" />
+    <footer>
+      <h5 className="name">{name}</h5>
+      <span className="price">{price}</span>
+      </footer>
+      </div>
+      </>
   );
 };
 export default Product_39;

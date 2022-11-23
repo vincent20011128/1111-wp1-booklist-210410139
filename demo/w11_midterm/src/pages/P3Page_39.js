@@ -7,7 +7,33 @@ const P3Page_39 = () => {
   console.log('products', products);
   return (
     <>
-      <h2>P3Page_39</h2>
+    <section className="main-section">
+      <div className="filter-left">
+      <div className="left-content">
+        <form className="input-form">
+          <input type="text" className="search-input" placeholder="search..." />
+        </form>
+        <h4>Company</h4>
+        <article className="companies">
+          <button className="company-btn">all</button>
+          <button className="company-btn">ikea</button>
+          <button className="company-btn">marcos</button>
+          <button className="company-btn">caressa</button>
+        </article>
+      </div>
+    </div>
+    <div className="products-right">
+      <div className="products-container">
+      
+        { products.map((product)=> {
+          const{ id,img, name, price } = product;
+          return (
+            <Product_39 key={id} img={img} name={name} price={price}></Product_39>
+          )
+        }) }
+      </div>
+    </div>
+  </section>
     </>
   );
 };
