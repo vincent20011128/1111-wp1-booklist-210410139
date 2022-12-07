@@ -1,6 +1,7 @@
 import React, { useState, useEffect,useContext } from 'react';
 import data from './components/BlogData_xx';
 import Alert_39 from './components/Alert_39';
+import BlogList_xx from "./components/BlogList_xx"
 
 const BlogContext = React.createContext();
 
@@ -64,4 +65,4 @@ const useBlogContext = () => {
   return useContext(BlogContext)
 }
 
-export {App_xx,useBlogContext} ;
+export {App_xx, useBlogContext} ;
