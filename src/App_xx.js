@@ -1,68 +1,27 @@
-import React, { useState, useEffect,useContext } from 'react';
-import data from './components/BlogData_xx';
-import Alert_39 from './components/Alert_39';
-import BlogList_xx from "./components/BlogList_xx"
+import React from 'react';
 
-const BlogContext = React.createContext();
+import { useGlobalContext_xx } from './Context_xx';
+
+// components
+import Navbar_xx from './components/Navbar_xx';
+import CartContainer_xx from './components/CartContainer_xx';
+// items
 
 const App_xx = () => {
-  const [blogs, setBlogs] =  useState(data);
-  console.log('blogs',blogs);
-  const [alert,setAlert] = useState({
-    show: false,
-    msg:'',
-    type: ''
-  });
-
-  const removeItem = (id) => {
-    setBlogs(blogs.filter((blog) => blog.id !== id));
-    showAlert(true,'item removed','danger');
-  }
-
-  const clearBlogs = () => {
-    setBlogs([]);
-    showAlert(true,'empty list','danger');
-  }
-
-  const filterItems = (category) => {
-    if(category === 'all') {
-      setBlogs(data);
-    } else {
-      const newBlogs = data.filter((blog) =>blog.category === category);
-      setBlogs(newBlogs);
-    }
-  }
-  const showAlert = (show = false, msg = '', type = '') => {
-    setAlert({show, msg, type });
-  };
-  
-
+  const { loading, cart} = useGlobalContext_xx();
+  // if (loading) {
+  //   return (
+  //     <div className='loading'>
+  //       <h1>Loading...</h1>
+  //     </div>
+  //   );
+  // }
   return (
-    <BlogContext.Provider value={{blogs,alert,removeItem,clearBlogs,filterItems,showAlert}}>
-    <section className="blogs">
-    {alert.show&& <Alert_39 {...alert} removeAlert={showAlert}/> }
-      <div className="section-title">
-        <h2>CSS Grid using breakpoints</h2>
-      </div>
-      <div className="filter-container">
-        <button type="button" className="filter-btn" onClick={()=>filterItems('all')}>all</button>
-        <button type="button" className="filter-btn" onClick={()=>filterItems('lifestyle')}>lifestyle</button>
-        <button type="button" className="filter-btn" onClick={()=>filterItems('travel')}>travel</button>
-      </div>   
-      <div className="blogs-center">
-        <BlogList_xx key={1}/>
-        </div>
-        <button className='clear-btn' onClick={clearBlogs}>
-        clear all blogs
-      </button>
-    </section>
-    </BlogContext.Provider>
+    <main>
+      <Navbar_xx />
+      <CartContainer_xx />
+    </main>
   );
 };
 
-
-const useBlogContext = () => {
-  return useContext(BlogContext)
-}
-
-export {App_xx, useBlogContext} ;
+export default App_xx;
