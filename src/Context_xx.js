@@ -30,6 +30,10 @@ const AppProvider_xx = ({children}) => {
   return <AppContext_xx.Provider value = {{...state, clearCart,increase}}>
     {children}
   </AppContext_xx.Provider>
+
+  const decrease = (id) => {
+    dispatch({type: 'DECREASE',payload:id});
+  }
 };
 
 const useGlobalContext_xx = () => {
