@@ -15,10 +15,19 @@ const initialState = {
 
 const AppProvider_xx = ({children}) => {
   const [state,dispatch] = useReducer(Reducer_xx,initialState);
+
+  useEffect(()=>{
+    dispatch({type:'GET_TOTALS'});
+  },[state.cart]);
+
   const clearCart = () => {
     dispatch({ type: 'CLEAR_CART'});
   }
-  return <AppContext_xx.Provider value = {{...state, clearCart}}>
+
+  const increase = (id) => {
+    dispatch({type: 'INCREASE', payload:id});
+  }
+  return <AppContext_xx.Provider value = {{...state, clearCart,increase}}>
     {children}
   </AppContext_xx.Provider>
 };
