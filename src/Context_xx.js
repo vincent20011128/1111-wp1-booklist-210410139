@@ -28,6 +28,10 @@ const AppProvider_xx = ({children}) => {
     dispatch({type: 'INCREASE', payload:id});
   }
 
+  const decrease = (id) => {
+    dispatch({type: 'DECREASE', payload:id});
+  }
+
   const remove = (id) => {
     dispatch({type:'REMOVE', payload: id});
   }
@@ -45,7 +49,7 @@ const AppProvider_xx = ({children}) => {
     fetchData();
   },[]);
 
-  return <AppContext_xx.Provider value = {{...state, clearCart,increase, remove}}>
+  return <AppContext_xx.Provider value = {{...state, clearCart,increase, decrease,remove}}>
     {children}
   </AppContext_xx.Provider>
 
