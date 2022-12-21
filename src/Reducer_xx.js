@@ -20,25 +20,32 @@ const Reducer_xx = (state, action) => {
         });
         return {...state , cart: tempCart}
     }
+    if(action.type === 'GET_TOTAL'){
 
-    
-
-    if(action.type === 'GET_TOTALS'){
-        let{total,amount} = state.cart.reduce((cartTotal,cartItem)=>{
-            const{price,amount} = cartItem;
+        let {total, amount} = state.cart.reduce((cartTotal, cartItem)=>{
+            const {price, amount} = cartItem;
             const itemTotal = price * amount;
             cartTotal.total += itemTotal;
             cartTotal.amount += amount;
             return cartTotal;
         }, {
-        total:0,
-        amount:0
-    });
-
-    total = parseFloat(total.toFixed(2));
-
-    return {...state, total, amount}
+            total: 0,
+            amount: 0,
+        });
+        total = parseFloat(total.toFixed(2));
+        return { ...state, total: total, amount: amount}
     }
+    if(action.type === 'LOADING') {
+        return { ...state,loading:true}
+    }
+    if(action.type === 'DISPLAY_ITEMS') {
+        return { ...state, cart: action.payload, loading: false}
+    }
+    if(action.type === 'REMOVE') {
+        const filteredCart = state.cart.filter((item) => item.id !== action.payload);
+        return { ...state, cart: filteredCart}
+    }
+
 }
 
 export default Reducer_xx;
